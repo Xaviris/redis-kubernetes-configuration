@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-test-pod
+spec:
+  containers:
+  - name: redis-client
+    image: redis
+    command: ["redis-cli"]
+    args: ["-h", "redis", "-p", "6379", "PING"]
+  restartPolicy: Never
